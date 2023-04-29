@@ -75,8 +75,8 @@ export default function LoginScreen() {
           <Text style={styles.appleText}>Continue with Apple</Text>
         </View>  
       </TouchableOpacity>
-      <View>
-        <Text style={styles.haveAccountText}>Don't have an account?</Text>
+      <View style={{ bottom: 0, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={styles.dontHaveAccountText}>Don't have an account?</Text>
       </View>
     </View>
      
@@ -85,6 +85,7 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -193,8 +194,14 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginRight: 10,
   },
-  haveAccountText: {
-    color: 'black',
-    fontSize: 16,
-  }   
+  dontHaveAccountText: {
+    position: 'absolute',
+    
+    bottom: 0,
+    marginBottom: 0,
+    alignContent: 'center', 
+    fontSize: 14,
+    color: '#a1a1a1',
+  },
+
 });

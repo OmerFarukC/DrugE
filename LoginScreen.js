@@ -75,17 +75,21 @@ export default function LoginScreen() {
           <Text style={styles.appleText}>Continue with Apple</Text>
         </View>  
       </TouchableOpacity>
-      <View style={{ bottom: 0, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={styles.dontHaveAccountText}>Don't have an account?</Text>
+      <View style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, alignItems: 'center', justifyContent: 'center', textAlignVertical: 'center' }}>
+        <Text style={styles.dontHaveAccountText}>Don't have an account?
+        <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
+          <Text  style={styles.signUpText}>Sign Up</Text>
+        </TouchableOpacity>
+        </Text>
+        
       </View>
-    </View>
-     
+    </View> 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    
+    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -196,12 +200,18 @@ const styles = StyleSheet.create({
   },
   dontHaveAccountText: {
     position: 'absolute',
-    
-    bottom: 0,
+    bottom: 20,
     marginBottom: 0,
     alignContent: 'center', 
     fontSize: 14,
     color: '#a1a1a1',
+    textAlignVertical: 'center'
   },
-
+  signUpText: {
+    color: '#a1a1a1',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
+   textAlignVertical:'center',
+  },
 });
